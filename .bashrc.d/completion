@@ -1,6 +1,16 @@
 # Node Completion
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
+if [ -d ~/.node-completion ]; then
+  for file in ~/.node-completion/*
+  do
+    . $file
+  done
+fi
+
+for file in ~/.node-completion/*
+do
+  . $file
 done
+
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
