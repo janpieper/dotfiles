@@ -6,11 +6,6 @@ if [ -d ~/.node-completion ]; then
   done
 fi
 
-for file in ~/.node-completion/*
-do
-  . $file
-done
-
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
