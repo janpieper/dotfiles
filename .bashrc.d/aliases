@@ -1,0 +1,27 @@
+# APT Package Manager
+alias search='apt-cache search'
+alias install='sudo apt-get install'
+alias uninstall='sudo apt-get remove && autoremove'
+alias autoremove='sudo apt-get autoremove'
+alias update='sudo apt-get update'
+alias upgrade='update && sudo apt-get upgrade'
+
+# Directory Listing
+alias l='ls -lh'
+alias ll='ls -lah'
+
+# Change Directory
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+
+# Clear Screen
+alias clear='clear && clear'
+
+# Diff
+alias diff='colordiff -u'

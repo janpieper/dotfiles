@@ -1,0 +1,49 @@
+[user]
+  name = Jan Pieper
+  email = jan.pieper@adcloud.com
+[alias]
+  unstage = reset HEAD --
+  who = !git shortlog --summary --email --numbered
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[core]
+  excludesfile = ~/.gitexcludes
+  editor = vi
+[push]
+  default = upstream
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[merge]
+  summary = true
+[rebase]
+  stat = true
+[chiefs]
+  ignore = "(production|develop|master|stage)"
+  reference = develop
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[gitflow "branch"]
+  master = master
+  develop = develop
+[gitflow "prefix"]
+  feature = feature/
+  release = release/
+  hotfix = hotfix/
+  support = support/
+  versiontag = RELEASE_
+[github]
+  user = janpieper

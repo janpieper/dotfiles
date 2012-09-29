@@ -1,0 +1,2 @@
+# See http://askubuntu.com/questions/26557/turning-off-xon-xoff-when-sshing-via-putty
+stty -ixon

@@ -1,0 +1,4 @@
+.bashrc.d/*.dist
+.viminfo
+.vim/ctrlp-cache
+.vim/.netrwhist

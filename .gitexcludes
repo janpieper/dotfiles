@@ -1,0 +1,16 @@
+.project
+.buildpath
+.settings*
+.DS_Store
+*~
+.bzr*
+nbproject
+/.netbeans/
+*.pyc
+.pydevproject
+dump.rdb
+nedis.db
+*.diff
+*.patch
+patches
+analysis

@@ -1,0 +1,17 @@
+# GNU Bash Manual
+export MANWIDTH=80
+
+# /sbin
+export PATH=$PATH:/sbin:/usr/sbin
+
+# AWS Env
+export PATH=$PATH:$HOME/.awsenv/bin
+
+# User binaries
+export PATH=$PATH:$HOME/.bin
+
+# Java
+export JAVA_HOME=/usr
+
+# GCC
+export CC=/usr/bin/gcc-4.6
