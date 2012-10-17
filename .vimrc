@@ -61,9 +61,6 @@ set number
 " Maximum number of changes that can be undone
 set undolevels=1000
 
-" Show some special characters
-set listchars=tab:,.,trail:.,extends:#,nbsp:.
-
 " Allow buffer switching without saving
 set hidden
 
