@@ -168,3 +168,7 @@ nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let@/=_s<Bar>:nohl<
 
 " Use system clipboard
 set clipboard=unnamedplus
+
+" Additional Ruby Syntax Highlighting
+" http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
+autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
