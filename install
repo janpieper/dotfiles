@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
 
 #
+# Configuration
+#
+toDir=$(pwd)
+fromDir=$HOME
+
+#
+# Arguments
+#
+if [ ! -z "$1" ]; then
+  if [ ! -d "$1" ]; then
+    echo "ERROR: First parameter given but no directory."
+    exit 1
+  fi
+  fromDir=$1
+fi
+
+#
 # Update git submodules
 #
 echo ">> Updating all git submodules"
@@ -10,9 +27,6 @@ git submodule update --init --recursive
 # Link all dotfiles from the current directory
 #
 echo ">> Creating all symlinks"
-
-toDir=$(pwd)
-fromDir=$HOME
 
 for dir in $(ls -a1); do
     # Skip "." and ".."
