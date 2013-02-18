@@ -3,18 +3,52 @@
 #
 # Configuration
 #
-toDir=$(pwd)
-fromDir=$HOME
+LINK_FROM=$HOME
+LINK_TO=$(pwd)
+LINK_MODE=link
 
 #
-# Arguments
+# Helper functions
 #
-if [ ! -z "$1" ]; then
-  if [ ! -d "$1" ]; then
-    echo "ERROR: First parameter given but no directory."
-    exit 1
-  fi
-  fromDir=$1
+extract_arg_value() {
+  echo $1 | sed 's/^[-a-zA-Z0-9]*=//'
+}
+
+extract_arg_name() {
+  echo $1 | sed -e 's/^\([-a-zA-Z0-9]*\)=.*/\1/'
+}
+
+#
+# Extract arguments
+#
+for arg in "$@"
+do
+  case $arg in
+    -f=*|--from=*)
+      LINK_FROM=$(extract_arg_value $arg)
+    ;;
+
+    -m=*|--mode=*)
+      LINK_MODE=$(extract_arg_value $arg)
+    ;;
+
+    *)
+      echo "ERROR: Unable to handle argument: $(extract_arg_name $arg)"
+      exit 1
+  esac
+done
+
+#
+# Validate arguments
+#
+if [ ! -d "$LINK_FROM" ]; then
+  echo "ERROR: Invalid link from given. Must be a valid directory."
+  exit 1
+fi
+
+if [ "$LINK_MODE" != "link" ] && [ "$LINK_MODE" != "copy" ]; then
+  echo "ERROR: Invalid link mode given. Must either be 'link' or 'copy'."
+  exit 1
 fi
 
 #
@@ -47,11 +81,16 @@ for dir in $(ls -a1); do
         continue
     fi
 
-    linkFrom="${fromDir}/${dir}"
-    linkTo="${toDir}/${dir}"
+    FILE_LINK_FROM="${LINK_FROM}/${dir}"
+    FILE_LINK_TO="${LINK_TO}/${dir}"
 
-    rm -rf "${linkFrom}"
-    ln -s "${linkTo}" "${linkFrom}"
+    rm -rf "${FILE_LINK_FROM}"
+
+    if [ "$LINK_MODE" == "copy" ]; then
+      cp -R "${FILE_LINK_TO}" "${FILE_LINK_FROM}"
+    else
+      ln -s "${FILE_LINK_TO}" "${FILE_LINK_FROM}"
+    fi
 done
 
 #
