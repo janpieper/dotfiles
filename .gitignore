@@ -2,6 +2,7 @@
 .viminfo
 .vim/ctrlp-cache
 .vim/.netrwhist
+.vim/doc
 .ssh
 secret-files.list
 secret-files.random
