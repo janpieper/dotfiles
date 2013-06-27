@@ -163,12 +163,32 @@ if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-" Clear trailing spaces. _s is used to restore the last search pattern register
-nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let@/=_s<Bar>:nohl<CR>
-
 " Use system clipboard
 set clipboard=unnamedplus
 
 " Additional Ruby Syntax Highlighting
 " http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
 autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+
+" Javascript
+autocmd BufWrite *.js :call DeleteTrailingWS()
+
+" CoffeeScript
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" PHP
+autocmd BufWrite *.php :call DeleteTrailingWS()
+
+" Ruby
+autocmd BufWrite *.rb :call DeleteTrailingWS()
+autocmd BufWrite *.ru :call DeleteTrailingWS()
+
+" JSON
+autocmd BufWrite *.json :call DeleteTrailingWS()
