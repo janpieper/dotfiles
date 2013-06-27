@@ -192,3 +192,6 @@ autocmd BufWrite *.ru :call DeleteTrailingWS()
 
 " JSON
 autocmd BufWrite *.json :call DeleteTrailingWS()
+
+" Keep yanked value if pasted
+xnoremap p pgvy
