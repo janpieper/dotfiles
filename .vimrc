@@ -170,28 +170,15 @@ set clipboard=unnamedplus
 " http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
 autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*,*.gemspec} set ft=ruby
 
-" Delete trailing white space on save
+" Delete trailing white space
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
     exe "normal `z"
 endfunc
 
-" Javascript
-autocmd BufWrite *.js :call DeleteTrailingWS()
-
-" CoffeeScript
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-" PHP
-autocmd BufWrite *.php :call DeleteTrailingWS()
-
-" Ruby
-autocmd BufWrite *.rb :call DeleteTrailingWS()
-autocmd BufWrite *.ru :call DeleteTrailingWS()
-
-" JSON
-autocmd BufWrite *.json :call DeleteTrailingWS()
+" Delete trailing white space on save
+autocmd BufWrite *.js,*.coffee,*.php,*.rb,*.ru,*.json,*.config,*.html,*.css,*.sh,*.xml :call DeleteTrailingWS()
 
 " Keep yanked value if pasted
 xnoremap p pgvy
