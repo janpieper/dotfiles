@@ -180,5 +180,14 @@ endfunc
 " Delete trailing white space on save
 autocmd BufWrite *.js,*.coffee,*.php,*.rb,*.ru,*.json,*.config,*.html,*.css,*.sh,*.xml :call DeleteTrailingWS()
 
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
+
 " Keep yanked value if pasted
 xnoremap p pgvy
