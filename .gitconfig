@@ -23,7 +23,7 @@
   stat = true
 [chiefs]
   ignore = "(production|develop|master|stage)"
-  reference = develop
+  reference = master
 [url "git@github.com:"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
