@@ -95,8 +95,8 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Stupid shift key fixes
-cmap W w
-cmap Q q
+"cmap W w
+"cmap Q q
 cmap WQ wq
 cmap wQ wq
 cmap Wq wq
