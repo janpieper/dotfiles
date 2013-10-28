@@ -6,6 +6,10 @@ if [ -d ~/.node-completion ]; then
   done
 fi
 
+if [ -f /usr/lib/git-core/git-sh-prompt ]; then
+  . /usr/lib/git-core/git-sh-prompt
+fi
+
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
