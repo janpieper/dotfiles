@@ -33,14 +33,5 @@
   pushInsteadOf = "git://gist.github.com"
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
-[gitflow "branch"]
-  master = master
-  develop = develop
-[gitflow "prefix"]
-  feature = feature/
-  release = release/
-  hotfix = hotfix/
-  support = support/
-  versiontag = RELEASE_
 [github]
   user = janpieper
