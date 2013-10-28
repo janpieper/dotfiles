@@ -76,6 +76,13 @@ for dir in $(ls -a1); do
         continue
     fi
 
+    if [ "${dir}" == ".dpkg.cfg" ] && [ -f /etc/os-release ]; then
+      OS_ID=`cat /etc/os-release | grep "ID=" | sed "s/ID=//"`
+      if [ "${OS_ID}" != "ubuntu" ]; then
+        continue;
+      fi
+    fi
+
     # Skip all "normal" (non hidden) files
     if [ "${dir:0:1}" != "." ]; then
         continue
