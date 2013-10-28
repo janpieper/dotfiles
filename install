@@ -68,6 +68,11 @@ for dir in $(ls -a1); do
         continue
     fi
 
+    # Skip all "normal" (non hidden) files
+    if [ "${dir:0:1}" != "." ]; then
+        continue
+    fi
+
     # Skip some git files that are specific to this repository
     if [ "${dir}" == ".git" ] \
     || [ "${dir}" == ".gitmodules" ] \
@@ -81,11 +86,6 @@ for dir in $(ls -a1); do
       if [ "${OS_ID}" != "ubuntu" ]; then
         continue;
       fi
-    fi
-
-    # Skip all "normal" (non hidden) files
-    if [ "${dir:0:1}" != "." ]; then
-        continue
     fi
 
     FILE_LINK_FROM="${LINK_FROM}/${dir}"
