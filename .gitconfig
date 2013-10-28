@@ -1,6 +1,6 @@
 [user]
   name = Jan Pieper
-  email = jan.pieper@adcloud.com
+  email = kontakt@jan-pieper.info
 [alias]
   unstage = reset HEAD --
   who = !git shortlog --summary --email --numbered
