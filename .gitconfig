@@ -21,9 +21,6 @@
   summary = true
 [rebase]
   stat = true
-[chiefs]
-  ignore = "(production|develop|master|stage)"
-  reference = master
 [url "git@github.com:"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
