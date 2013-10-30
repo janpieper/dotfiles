@@ -81,9 +81,13 @@ for dir in $(ls -a1); do
         continue
     fi
 
-    if [ "${dir}" == ".dpkg.cfg" ] && [ -f /etc/os-release ]; then
-      OS_ID=`cat /etc/os-release | grep "ID=" | sed "s/ID=//"`
-      if [ "${OS_ID}" != "ubuntu" ]; then
+    if [ "${dir}" == ".dpkg.cfg" ] then
+      if [ -f /etc/os-release ]; then
+        OS_ID=`cat /etc/os-release | grep "ID=" | sed "s/ID=//"`
+        if [ "${OS_ID}" != "ubuntu" ]; then
+          continue;
+        fi
+      elif [ -f /etc/debian_version ]; then
         continue;
       fi
     fi
