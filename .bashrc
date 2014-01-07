@@ -81,7 +81,13 @@ do
 done
 
 # Prevent PATH pollution
-export PATH=`echo $PATH | sed -e 's/:/\n/g' | sort | uniq | tr "\\n" ":" | sed -e 's/^://g' | sed -e 's/:$//g'`
+SYSNAME=`uname`
+if [ ${SYSNAME} == "Darwin" ]; then
+  MOD_PATH=`echo $PATH | sed -e 's/:/\'$'\n/g' | sort | uniq | tr "\\n" ":" | sed -e 's/^://g' | sed -e 's/:$//g'`
+else
+  MOD_PATH=`echo $PATH | sed -e 's/:/\n/g' | sort | uniq | tr "\\n" ":" | sed -e 's/^://g' | sed -e 's/:$//g'`
+fi
+export PATH=$MOD_PATH
 
 # Use vim as default editor
 export EDITOR=vi
