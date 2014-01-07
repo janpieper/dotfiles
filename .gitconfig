@@ -11,7 +11,7 @@
   interactive = auto
 [core]
   excludesfile = ~/.gitexcludes
-  editor = vi
+  editor = /usr/bin/vim
 [push]
   default = upstream
 [branch]
