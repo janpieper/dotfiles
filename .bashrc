@@ -45,7 +45,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\] '
+SYSNAME=`uname`
+if [ ${SYSNAME} == "Darwin" ]; then
+  PS1='\[\033[01;32m\]\u@\H\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\] '
+else
+  PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\] '
+fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -81,7 +87,6 @@ do
 done
 
 # Prevent PATH pollution
-SYSNAME=`uname`
 if [ ${SYSNAME} == "Darwin" ]; then
   MOD_PATH=`echo $PATH | sed -e 's/:/\'$'\n/g' | sort | uniq | tr "\\n" ":" | sed -e 's/^://g' | sed -e 's/:$//g'`
 else
