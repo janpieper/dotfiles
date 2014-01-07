@@ -10,6 +10,10 @@ if [ -f /usr/lib/git-core/git-sh-prompt ]; then
   . /usr/lib/git-core/git-sh-prompt
 fi
 
+if [ -f ~/.git-prompt ]; then
+  . ~/.git-prompt
+fi
+
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi

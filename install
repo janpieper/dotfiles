@@ -6,6 +6,7 @@
 LINK_FROM=$HOME
 LINK_TO=$(pwd)
 LINK_MODE=link
+SYSNAME=`uname`
 
 #
 # Helper functions
@@ -90,6 +91,10 @@ for dir in $(ls -a1); do
       elif [ -f /etc/debian_version ]; then
         continue;
       fi
+    fi
+
+    if [ "${dir}" == ".git-prompt" ] && [ ${SYSNAME} != "Darwin" ]; then
+      continue;
     fi
 
     FILE_LINK_FROM="${LINK_FROM}/${dir}"
