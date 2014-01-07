@@ -116,6 +116,14 @@ echo ">> Installing all vim plugins"
 vim -e -c BundleInstall -c quitall > /dev/null
 
 #
+# Install OSX settings
+#
+if [ "${SYSNAME}" == "Darwin" ]; then
+  echo ">> Installing OSX settings"
+  ./install-osx-settings
+fi
+
+#
 # Done! :D
 #
 echo ">> Done"
