@@ -25,3 +25,6 @@ alias clear='clear && clear'
 
 # Diff
 alias diff='colordiff -u'
+
+# VIM
+alias vi='vi -p'
