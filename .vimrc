@@ -174,6 +174,7 @@ autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Stormfile,config.r
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
+    %s/\%x0d$//ge
     exe "normal `z"
 endfunc
 
