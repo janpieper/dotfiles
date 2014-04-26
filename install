@@ -150,6 +150,13 @@ if command_exists gsettings ; then
 fi
 
 #
+# Install GConf settings
+#
+if command_exists "gconftool-2" ; then
+  ./install-gconf-settings
+fi
+
+#
 # Done! :D
 #
 echo ">> Done"
