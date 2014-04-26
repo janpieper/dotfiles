@@ -21,7 +21,7 @@ install the tools itself (e.g. tmux) and start working.
 
 ## License
 
-    Copyright 2011-2012 Jan Pieper <kontakt@jan-pieper.info>
+    Copyright 2011-2014 Jan Pieper <kontakt@jan-pieper.info>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
