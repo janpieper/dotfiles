@@ -7,6 +7,7 @@ LINK_FROM=$HOME
 LINK_TO=$(pwd)
 LINK_MODE=link
 SYSNAME=`uname`
+PACKAGES=(git-core vim vim-nox tree htop psmisc tmux curl wget)
 
 #
 # Helper functions
@@ -17,6 +18,10 @@ extract_arg_value() {
 
 extract_arg_name() {
   echo $1 | sed -e 's/^\([-a-zA-Z0-9]*\)=.*/\1/'
+}
+
+package_installed() {
+  dpkg --list | grep "\b$1\b" &> /dev/null
 }
 
 #
@@ -50,6 +55,24 @@ fi
 if [ "$LINK_MODE" != "link" ] && [ "$LINK_MODE" != "copy" ]; then
   echo "ERROR: Invalid link mode given. Must either be 'link' or 'copy'."
   exit 1
+fi
+
+#
+# Install packages
+#
+
+MISSING=()
+for PACKAGE in "${PACKAGES[@]}"
+do
+  if ! package_installed $PACKAGE ; then
+    MISSING+=($PACKAGE)
+  fi
+done
+
+if [ "${#MISSING[@]}" -gt 0 ]; then
+  echo ">> Installing missing packages: ${MISSING[@]}"
+  sudo apt-get update
+  sudo apt-get install --yes ${MISSING[@]}
 fi
 
 #
