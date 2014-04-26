@@ -115,12 +115,12 @@ for dir in $(ls -a1); do
         if [ "${OS_ID}" != "ubuntu" ]; then
           continue;
         fi
-      elif [ -f /etc/debian_version ] || [ ${SYSNAME} == "Darwin" ]; then
+      elif [ -f /etc/debian_version ]; then
         continue;
       fi
     fi
 
-    if [ "${dir}" == ".git-prompt" ] && [ ${SYSNAME} != "Darwin" ]; then
+    if [ "${dir}" == ".git-prompt" ]; then
       continue;
     fi
 
@@ -141,14 +141,6 @@ done
 #
 echo ">> Installing all vim plugins"
 vim -e -c BundleInstall -c quitall > /dev/null
-
-#
-# Install OSX settings
-#
-if [ "${SYSNAME}" == "Darwin" ]; then
-  echo ">> Installing OSX settings"
-  ./install-osx-settings
-fi
 
 #
 # Install GNOME settings
