@@ -13,6 +13,12 @@ All my personal configuration files for various unix tools.
 Now everything should be linked into your home folder and be ready to use. Just
 install the tools itself (e.g. tmux) and start working.
 
+## GNOME Solarized Theme
+
+    $ git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    $ cd gnome-terminal-colors-solarized
+    $ ./set_dark.sh
+
 ## License
 
     Copyright 2011-2012 Jan Pieper <kontakt@jan-pieper.info>
