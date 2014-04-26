@@ -10,8 +10,7 @@ All my personal configuration files for various unix tools.
     $ cd dotfiles
     $ ./install
 
-Now everything should be linked into your home folder and be ready to use. Just
-install the tools itself (e.g. tmux) and start working.
+Now everything should be linked into your home folder and be ready to use.
 
 ## GNOME Solarized Theme
 
