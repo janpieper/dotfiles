@@ -1,0 +1,34 @@
+#!/bin/bash
+
+gsettings set org.gnome.desktop.background color-shading-type 'solid'
+gsettings set org.gnome.desktop.background primary-color '#72729f9fcfcf'
+gsettings set org.gnome.desktop.background show-desktop-icons true
+gsettings set org.gnome.desktop.background draw-background true
+
+gsettings set org.gnome.desktop.interface clock-format '24h'
+gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
+gsettings set org.gnome.desktop.wm.preferences action-double-click-titlebar 'toggle-maximize'
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Alt>exclam']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Alt>quotedbl']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Alt>section']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Alt>dollar']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Alt>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Alt>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Alt>4']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['F10']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['F11']"
+
+gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-x'
+
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim-ac false
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim-battery false
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim-time 30

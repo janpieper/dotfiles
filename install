@@ -24,6 +24,10 @@ package_installed() {
   dpkg --list | grep "\b$1\b" &> /dev/null
 }
 
+command_exists() {
+  builtin type -p $1 &> /dev/null
+}
+
 #
 # Extract arguments
 #
@@ -144,6 +148,13 @@ vim -e -c BundleInstall -c quitall > /dev/null
 if [ "${SYSNAME}" == "Darwin" ]; then
   echo ">> Installing OSX settings"
   ./install-osx-settings
+fi
+
+#
+# Install GNOME settings
+#
+if command_exists gsettings ; then
+  ./install-gnome-settings
 fi
 
 #
