@@ -146,6 +146,7 @@ vim -e -c BundleInstall -c quitall > /dev/null
 # Install GNOME settings
 #
 if command_exists gsettings ; then
+  echo ">> Installing GNOME settings"
   ./install-gnome-settings
 fi
 
@@ -153,6 +154,7 @@ fi
 # Install GConf settings
 #
 if command_exists "gconftool-2" ; then
+  echo ">> Installig GConf settings"
   ./install-gconf-settings
 fi
 
