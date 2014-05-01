@@ -31,6 +31,5 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-x'
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'suspend'
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend'
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend'
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim-ac false
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim-battery false
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim-time 30
+
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
