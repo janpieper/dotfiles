@@ -25,6 +25,10 @@ gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['F11']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Alt>less'
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
+gsettings set org.gnome.settings-daemon.plugins.media-keys volumne-up '<Super>Up'
+gsettings set org.gnome.settings-daemon.plugins.media-keys volumne-down '<Super>Down'
+gsettings set org.gnome.settings-daemon.plugins.media-keys next '<Super>Rigth'
+gsettings set org.gnome.settings-daemon.plugins.media-keys previous '<Super>Left'
 
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-x'
