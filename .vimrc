@@ -170,6 +170,9 @@ set clipboard=unnamedplus
 " http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
 autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Stormfile,config.ru,.caprc,.irbrc,irb_tempfile*,*.gemspec} set ft=ruby
 
+" BlackBerry QML
+autocmd BufRead,BufNewFile {*.qml} set ft=javascript
+
 " Delete trailing white space
 func! DeleteTrailingWS()
     exe "normal mz"
