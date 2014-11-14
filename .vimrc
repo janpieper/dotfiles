@@ -179,7 +179,7 @@ func! DeleteTrailingWS()
 endfunc
 
 " Delete trailing white space on save
-autocmd BufWrite *.js,*.coffee,*.php,*.rb,*.ru,*.json,*.config,*.html,*.css,*.sh,*.xml :call DeleteTrailingWS()
+autocmd BufWrite * :call DeleteTrailingWS()
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
