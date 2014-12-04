@@ -138,6 +138,9 @@ map <S-t> :tabnew<CR>
 map <S-Left> :tabprev<CR>
 map <S-Right> :tabnext<CR>
 
+" Allow up to 20 tabs at once
+set tabpagemax=20
+
 " For when you forgot to sudo... Really write the file!
 cmap w!! w !sudo tee %> /dev/null
 
