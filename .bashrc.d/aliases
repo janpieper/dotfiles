@@ -28,3 +28,6 @@ alias diff='colordiff -u'
 
 # VIM
 alias vi='vi -p'
+
+# UUIDv4
+alias uuid='uuid -v4'
