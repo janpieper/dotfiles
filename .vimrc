@@ -176,6 +176,9 @@ autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Stormfile,config.r
 " BlackBerry QML
 autocmd BufRead,BufNewFile {*.qml} set ft=javascript
 
+" Java
+autocmd FileType java setl sw=4 sts=4 et
+
 " Delete trailing white space
 func! DeleteTrailingWS()
     exe "normal mz"
