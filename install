@@ -140,7 +140,7 @@ for dir in $(ls -a1); do
     rm -rf "${FILE_LINK_FROM}"
 
     if [ "$LINK_MODE" == "copy" ]; then
-      cp -R "${FILE_LINK_TO}" "${FILE_LINK_FROM}"
+      cp -R "${FILE_LINK_FROM}" "${FILE_LINK_TO}"
     else
       ln -s "${FILE_LINK_TO}" "${FILE_LINK_FROM}"
     fi
