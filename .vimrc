@@ -201,3 +201,7 @@ set viminfo^=%
 
 " Keep yanked value if pasted
 xnoremap p pgvy
+
+" Toggle auto-indenting for code paste
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+set pastetoggle=<F2>
