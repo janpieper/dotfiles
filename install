@@ -9,7 +9,8 @@ LINK_MODE=link
 SYSNAME=`uname`
 
 PACKAGES=(git-core vim vim-nox tree htop psmisc tmux curl wget apt-file)
-PACKAGES+=(colordiff python-setuptools)
+PACKAGES+=(colordiff python-setuptools python-pip python3-setuptools)
+PACKAGES+=(python3-pip libav-tools)
 
 #
 # Helper functions
@@ -87,6 +88,16 @@ fi
 if ! command_exists http ; then
   echo ">> Install HTTPie"
   sudo easy_install httpie
+fi
+
+if ! command_exists scdl ; then
+  echo ">> Install scdl (Soundcloud Downloader)"
+  sudo pip3 install scdl
+fi
+
+if ! command_exists youtube-dl ; then
+  echo ">> Install youtube-dl (Youtube Downloader)"
+  sudo pip install --upgrade youtube-dl
 fi
 
 #

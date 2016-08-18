@@ -31,3 +31,9 @@ alias vi='vi -p'
 
 # UUIDv4
 alias uuid='uuid -v4'
+
+# Soundcloud to MP3
+alias soundcloud-to-mp3='scdl --onlymp3 --path ~/Music/Soundcloud -l'
+
+# Youtube to MP3
+alias youtube-to-mp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
