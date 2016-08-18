@@ -176,6 +176,9 @@ autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Stormfile,config.r
 " BlackBerry QML
 autocmd BufRead,BufNewFile {*.qml} set ft=javascript
 
+" Slim Template
+autocmd BufRead,BufNewFile {*.slim} set ft=slim
+
 " Java
 autocmd FileType java setl sw=4 sts=4 et
 
