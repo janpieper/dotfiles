@@ -1,6 +1,7 @@
 [user]
   name = Jan Pieper
   email = kontakt@jan-pieper.info
+  signingkey = B8FC53BE
 [alias]
   unstage = reset HEAD --
   who = !git shortlog --summary --email --numbered
@@ -12,6 +13,8 @@
 [core]
   excludesfile = ~/.gitexcludes
   editor = /usr/bin/vim
+[commit]
+  gpgsign = true
 [push]
   default = upstream
 [branch]
