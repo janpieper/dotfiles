@@ -17,3 +17,9 @@ fi
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
+
+# AWS CLI completion
+# http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
+if [ -f /usr/bin/aws_completer ]; then
+  complete -C '/usr/bin/aws_completer' aws
+fi
