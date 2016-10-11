@@ -141,10 +141,6 @@ for dir in $(ls -a1); do
       fi
     fi
 
-    if [ "${dir}" == ".git-prompt" ]; then
-      continue;
-    fi
-
     FILE_LINK_FROM="${LINK_FROM}/${dir}"
     FILE_LINK_TO="${LINK_TO}/${dir}"
 
