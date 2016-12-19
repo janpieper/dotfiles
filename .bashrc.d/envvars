@@ -21,3 +21,6 @@ export CC=/usr/bin/gcc-4.6
 
 # Chef / Knife
 export KNIFE_USER=janpieper
+
+# Golang
+export GOPATH=~/.go
