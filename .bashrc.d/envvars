@@ -24,3 +24,6 @@ export KNIFE_USER=janpieper
 
 # Golang
 export GOPATH=~/.go
+
+# Disable virtualenv-prompt extension
+export VIRTUAL_ENV_DISABLE_PROMPT=1
