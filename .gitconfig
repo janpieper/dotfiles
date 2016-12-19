@@ -13,8 +13,6 @@
 [core]
   excludesfile = ~/.gitexcludes
   editor = /usr/bin/vim
-[commit]
-  gpgsign = true
 [push]
   default = upstream
 [branch]
