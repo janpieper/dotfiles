@@ -100,12 +100,6 @@ if ! command_exists youtube-dl ; then
 fi
 
 #
-# Update git submodules
-#
-echo ">> Updating all git submodules"
-git submodule update --init --recursive
-
-#
 # Link all dotfiles from the current directory
 #
 echo ">> Creating all symlinks"
