@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/vivekannan/calc.git
+cd calc
+gcc -std=c99 -o calc calc.c helpers.c -lm
+mv ./calc /usr/local/bin/
+cd ..
+rm -rf calc

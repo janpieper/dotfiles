@@ -99,6 +99,11 @@ if ! command_exists youtube-dl ; then
   sudo pip install --upgrade youtube-dl
 fi
 
+if ! command_exists calc ; then
+  echo ">> Install calc (Minimalistic calculator)"
+  sudo ./install-calc
+fi
+
 #
 # Link all dotfiles from the current directory
 #
