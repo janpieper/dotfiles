@@ -10,6 +10,9 @@ export PATH=$PATH:$HOME/.awsenv/bin
 # User binaries
 export PATH=$PATH:$HOME/.bin
 
+# Pip
+export PATH=$PATH:$HOME/.local/bin
+
 # Java
 export JAVA_HOME=/usr
 
