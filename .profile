@@ -20,3 +20,9 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# load and initialize RVM (ruby version manager) if it exists
+if [ -s "$HOME/.rvm/scripts" ]; then
+    source "$HOME/.rvm/scripts/rvm"
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
