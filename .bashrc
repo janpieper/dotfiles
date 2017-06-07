@@ -84,6 +84,3 @@ done
 # Prevent PATH pollution
 MOD_PATH=`echo $PATH | sed -e 's/:/\n/g' | sort | uniq | tr "\\n" ":" | sed -e 's/^://g' | sed -e 's/:$//g'`
 export PATH=$MOD_PATH
-
-# Use vim as default editor
-export EDITOR=vi
