@@ -28,5 +28,8 @@ export GOPATH=~/.go
 # Disable virtualenv-prompt extension
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+# Increase follow time for `docker-compose logs` to 10 minutes
+export COMPOSE_HTTP_TIMEOUT=3600
+
 # Use vim as default editor
 export EDITOR=vi
