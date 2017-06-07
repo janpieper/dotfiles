@@ -208,3 +208,13 @@ xnoremap p pgvy
 " Toggle auto-indenting for code paste
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 set pastetoggle=<F2>
+
+function! CloseAllBuffersExceptCurrent()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1 | silent! execute "1,".(curr-1)."bd" | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+
+nmap <Leader>\c :call CloseAllBuffersExceptCurrent()<CR>
