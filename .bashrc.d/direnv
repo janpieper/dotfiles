@@ -1,0 +1,5 @@
+# Reset log format to avoid direnv to log anything
+export DIRENV_LOG_FORMAT=
+
+# Initialize direnv
+eval `direnv hook bash`

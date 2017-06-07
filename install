@@ -9,7 +9,7 @@ LINK_MODE=link
 
 PACKAGES=(git-core vim vim-nox tree htop psmisc tmux curl wget apt-file)
 PACKAGES+=(colordiff python-setuptools python-pip python3-setuptools)
-PACKAGES+=(python3-pip libav-tools audacious id3v2 mplayer vlc irssi)
+PACKAGES+=(python3-pip libav-tools audacious id3v2 mplayer vlc irssi direnv)
 
 #
 # Helper functions
