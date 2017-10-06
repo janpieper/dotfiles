@@ -4,10 +4,17 @@ gsettings set org.gnome.desktop.background color-shading-type 'solid'
 gsettings set org.gnome.desktop.background primary-color '#72729f9fcfcf'
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.background draw-background true
+gsettings set org.gnome.desktop.background picture-options 'none'
 
 gsettings set org.gnome.desktop.interface clock-format '24h'
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface clock-show-seconds true
+
+gsettings set com.canonical.indicator.datetime.show-date true
+gsettings set com.canonical.indicator.datetime.show-year true
+gsettings set com.canonical.indicator.datetime.show-day true
+gsettings set com.canonical.indicator.datetime.show-seconds true
+gsettings set com.canonical.indicator.datetime.show-week-numbers true
 
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
 gsettings set org.gnome.desktop.wm.preferences action-double-click-titlebar 'toggle-maximize'
@@ -39,3 +46,11 @@ gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action '
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 
 gsettings set com.ubuntu.update-notifier no-show-notifications true
+
+RAW_GNOME_TERMINAL_PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default)
+GNOME_TERMINAL_PROFILE_ID=${RAW_GNOME_TERMINAL_PROFILE_ID:1:-1}
+
+dconf write /org/gnome/terminal/legacy/profiles:/:${GNOME_TERMINAL_PROFILE_ID}/scrollback-unlimited true
+dconf write /org/gnome/terminal/legacy/profiles:/:${GNOME_TERMINAL_PROFILE_ID}/scrollbar-policy never
+dconf write /org/gnome/terminal/legacy/profiles:/:${GNOME_TERMINAL_PROFILE_ID}/default-size-columns 120
+dconf write /org/gnome/terminal/legacy/profiles:/:${GNOME_TERMINAL_PROFILE_ID}/default-size-rows 30
