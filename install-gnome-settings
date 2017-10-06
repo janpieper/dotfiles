@@ -57,6 +57,8 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-tim
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 gsettings set org.gnome.desktop.session idle-delay uint32 0
 
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+
 RAW_GNOME_TERMINAL_PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default)
 GNOME_TERMINAL_PROFILE_ID=${RAW_GNOME_TERMINAL_PROFILE_ID:1:-1}
 
