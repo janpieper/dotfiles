@@ -1,6 +1,6 @@
 # APT Package Manager
 alias search='apt-cache search'
-alias install='sudo apt-get install'
+alias install='sudo apt-get install --no-install-recommends'
 alias uninstall='sudo apt-get remove && autoremove'
 alias autoremove='sudo apt-get autoremove'
 alias update='sudo apt-get update'
