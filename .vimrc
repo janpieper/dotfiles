@@ -224,3 +224,9 @@ function! CloseAllBuffersExceptCurrent()
 endfunction
 
 nmap <Leader>\c :call CloseAllBuffersExceptCurrent()<CR>
+
+" Autoformat file on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
