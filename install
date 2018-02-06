@@ -104,6 +104,11 @@ if ! command_exists calc ; then
   sudo ./install-calc
 fi
 
+if ! command_exists asdf ; then
+  echo ">> Install asdf (Extendable Version Manager)"
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+fi
+
 #
 # Link all dotfiles from the current directory
 #
