@@ -156,6 +156,12 @@ let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_working_path_mode = 0
 
+" CtrlP - Open files in a new buffer
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
+
 " File IO
 " set autoread <-- SEGMENTATION FAULT
 " au FocusLost * :wa
