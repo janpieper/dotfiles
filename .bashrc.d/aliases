@@ -37,3 +37,6 @@ alias soundcloud-to-mp3='scdl --onlymp3 --path ~/Music/Soundcloud -l'
 
 # Youtube to MP3
 alias youtube-to-mp3='youtube-dl -x --audio-format mp3 -o "~/Music/Youtube/%(title)s.%(ext)s"'
+
+# ¯\_(ツ)_/¯
+alias shrug='echo -e "\n  ¯\_(ツ)_/¯\n"'
