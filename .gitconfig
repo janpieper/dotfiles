@@ -12,7 +12,7 @@
   interactive = auto
 [core]
   excludesfile = ~/.gitexcludes
-  editor = /usr/bin/vim
+  editor = /usr/bin/vi -c 'set colorcolumn=72'
 [push]
   default = upstream
 [branch]
