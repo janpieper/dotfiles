@@ -8,7 +8,7 @@ alias upgrade='update && sudo apt-get upgrade'
 
 # Directory Listing
 alias l='ls -lh'
-alias ll='ls -lah'
+alias ll='ls -lAh'
 
 # Change Directory
 alias ..='cd ..'
