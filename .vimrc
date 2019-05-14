@@ -27,7 +27,7 @@ set smarttab
 set nowrap
 
 " 80-column marker
-set colorcolumn=80,120
+set colorcolumn=80,100,120
 
 " t - autowrap to textwidth
 " c - autowrap comments to textwidth
