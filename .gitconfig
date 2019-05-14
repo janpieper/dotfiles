@@ -38,3 +38,9 @@
   insteadOf = "gist:"
 [github]
   user = janpieper
+[branch "master"]
+  mergeoptions = --no-ff
+[branch "staging"]
+  mergeoptions = --no-ff
+[branch "development"]
+  mergeoptions = --no-ff
