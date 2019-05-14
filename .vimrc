@@ -188,6 +188,9 @@ autocmd BufRead,BufNewFile {*.slim} set ft=slim
 " Java
 autocmd FileType java setl sw=4 sts=4 et
 
+" Python
+autocmd FileType python setl sw=4 sts=4 et
+
 " Delete trailing white space
 func! DeleteTrailingWS()
     exe "normal mz"
