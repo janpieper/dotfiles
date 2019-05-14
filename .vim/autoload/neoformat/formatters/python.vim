@@ -1,25 +1,11 @@
 function! neoformat#formatters#python#enabled() abort
-    return ['yapf', 'autopep8', 'isort']
+    return ['black']
 endfunction
 
-function! neoformat#formatters#python#yapf() abort
+function! neoformat#formatters#python#black() abort
     return {
-                \ 'exe': 'yapf',
+                \ 'exe': 'black',
+                \ 'args': ['-', '--quiet'],
                 \ 'stdin': 1
                 \ }
-endfunction
-
-function! neoformat#formatters#python#autopep8() abort
-    return {
-                \ 'exe': 'autopep8',
-                \ 'args': ['-'],
-                \ 'stdin': 1}
-endfunction
-
-
-function! neoformat#formatters#python#isort() abort
-    return {
-                \ 'exe': 'isort',
-                \ 'args': ['-', '--quiet'],
-                \ 'stdin': 1}
 endfunction
