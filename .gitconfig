@@ -5,6 +5,8 @@
 [alias]
   unstage = reset HEAD --
   who = !git shortlog --summary --email --numbered
+  cached = !git diff --cached
+  amend = !git commit --amend
 [color]
   diff = auto
   status = auto
