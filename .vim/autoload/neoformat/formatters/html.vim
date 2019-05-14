@@ -1,5 +1,6 @@
 function! neoformat#formatters#html#enabled() abort
-    return ['htmlbeautify', 'tidy', 'prettydiff']
+    " return ['htmlbeautify', 'tidy', 'prettydiff']
+    return []
 endfunction
 
 function! neoformat#formatters#html#tidy() abort
