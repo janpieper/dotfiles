@@ -7,10 +7,10 @@ LINK_FROM=$HOME
 LINK_TO=$(pwd)
 LINK_MODE=link
 
-PACKAGES=(git-core vim vim-nox vim-gnome tree htop psmisc tmux curl wget nmap)
-PACKAGES+=(colordiff python-setuptools python-pip python3-setuptools apt-file)
-PACKAGES+=(python3-pip libav-tools audacious id3v2 mplayer vlc irssi direnv jq)
-PACKAGES+=(sysstat iotop cmus)
+PACKAGES=(git vim vim-nox vim-gtk3 tree htop psmisc tmux curl wget nmap)
+PACKAGES+=(colordiff apt-file autoconf automake libssl-dev libncurses5-dev)
+PACKAGES+=(audacious id3v2 mplayer vlc irssi direnv jq httpie sysstat iotop)
+PACKAGES+=(cmus docker.io docker-compose inotify-tools tree net-tools fzf)
 
 #
 # Helper functions
@@ -79,35 +79,36 @@ done
 if [ "${#MISSING[@]}" -gt 0 ]; then
   echo ">> Installing missing packages: ${MISSING[@]}"
   sudo apt-get update
-  sudo apt-get install --yes ${MISSING[@]}
-fi
-
-#
-# Install non-apt tools
-#
-if ! command_exists http ; then
-  echo ">> Install HTTPie"
-  sudo easy_install httpie
-fi
-
-if ! command_exists scdl ; then
-  echo ">> Install scdl (Soundcloud Downloader)"
-  sudo pip3 install scdl
-fi
-
-if ! command_exists youtube-dl ; then
-  echo ">> Install youtube-dl (Youtube Downloader)"
-  sudo pip install --upgrade youtube-dl
-fi
-
-if ! command_exists calc ; then
-  echo ">> Install calc (Minimalistic calculator)"
-  sudo ./install-calc
+  sudo apt-get --no-install-recommends install --yes ${MISSING[@]}
 fi
 
 if ! command_exists asdf ; then
   echo ">> Install asdf (Extendable Version Manager)"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+  pushd ~/.asdf
+  git checkout "$(git describe --abbrev=0 --tags)"
+  popd
+
+  # TODO: Install `erlang`
+  # TODO: Install `elixir`
+  # TODO: Install `python`
+fi
+
+if ! command_exists scdl ; then
+  echo ">> Install scdl (Soundcloud Downloader)"
+  pip3 install --upgrade scdl
+fi
+
+if ! command_exists youtube-dl ; then
+  echo ">> Install youtube-dl (Youtube Downloader)"
+  pip3 install --upgrade youtube-dl
+fi
+
+# TODO: Run `asdf reshim`
+
+if ! command_exists calc ; then
+  echo ">> Install calc (Minimalistic calculator)"
+  sudo ./install-calc
 fi
 
 #
@@ -151,17 +152,13 @@ for dir in $(ls -a1); do
     rm -rf "${FILE_LINK_FROM}"
 
     if [ "$LINK_MODE" == "copy" ]; then
+      echo "Copy: $FILE_LINK_FROM --> $FILE_LINK_TO"
       cp -R "${FILE_LINK_FROM}" "${FILE_LINK_TO}"
     else
+      echo "Symlink: $FILE_LINK_FROM --> $FILE_LINK_TO"
       ln -s "${FILE_LINK_TO}" "${FILE_LINK_FROM}"
     fi
 done
-
-#
-# Install vim plugins
-#
-echo ">> Installing all vim plugins"
-vim -e -c BundleInstall -c quitall > /dev/null
 
 #
 # Install GNOME settings
