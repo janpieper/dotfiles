@@ -4,3 +4,10 @@
 .vim/.netrwhist
 .vim/doc
 .ssh
+.cmus/command-history
+.cmus/cache
+.cmus/lib.pl
+.cmus/playlists/
+.cmus/search-history
+tmux-client-*.log
+tmux-server-*.log
