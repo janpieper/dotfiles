@@ -1,21 +1,7 @@
-# Node Completion
-if [ -d ~/.node-completion ]; then
-  for file in ~/.node-completion/*
-  do
-    . $file
-  done
-fi
-
 if [ -f /usr/lib/git-core/git-sh-prompt ]; then
   . /usr/lib/git-core/git-sh-prompt
 fi
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
-fi
-
-# AWS CLI completion
-# http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-if [ -f /usr/bin/aws_completer ]; then
-  complete -C '/usr/bin/aws_completer' aws
 fi
