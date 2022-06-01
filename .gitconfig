@@ -7,6 +7,7 @@
   who = !git shortlog --summary --email --numbered
   cached = !git diff --cached
   amend = !git commit --amend
+  root = !cd $(rev-parse --show-toplevel)
 [color]
   diff = auto
   status = auto
@@ -41,9 +42,17 @@
   user = janpieper
 [branch "master"]
   mergeoptions = --no-ff
+[branch "main"]
+  mergeoptions = --no-ff
 [branch "staging"]
+  mergeoptions = --no-ff
+[branch "develop"]
   mergeoptions = --no-ff
 [branch "development"]
   mergeoptions = --no-ff
+[branch "dev"]
+  mergeoptions = --no-ff
+[init]
+  defaultBranch = main
 [diff "sops"]
   textconv = sops -d
