@@ -7,8 +7,12 @@ set -e
 BRANCH=$1
 
 git merge $BRANCH
-git push
-git push origin :$BRANCH
+git push --no-verify
+
+set +e
+git push --no-verify origin :$BRANCH
+set -e
+
 git fetch -p
 git branch -d $BRANCH
 
