@@ -4,11 +4,11 @@ export MANWIDTH=80
 # /sbin
 export PATH=$PATH:/sbin:/usr/sbin
 
-# User binaries
-export PATH=$PATH:$HOME/.bin
-
 # Pip
 export PATH=$PATH:$HOME/.local/bin
+
+# User binaries
+export PATH=$HOME/.bin:$PATH
 
 # Java
 export JAVA_HOME=/usr
