@@ -12,6 +12,9 @@ dump.rdb
 nedis.db
 *.diff
 *.patch
-patches
-analysis
+_
 docker-compose*local.yml
+docker-compose*mine.yml
+local*.docker-compose*.yml
+local*.Dockerfile
+.iex_history
