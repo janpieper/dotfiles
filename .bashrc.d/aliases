@@ -44,3 +44,6 @@ alias shrug='echo -e "\n  ¯\_(ツ)_/¯\n"'
 # OpenSSL
 alias openssl-inspect='openssl x509 -text -noout -in'
 alias openssl-inspect-host='openssl s_client -state -connect'
+
+# cmus
+alias cmus='(cd ~/Music && cmus)'
